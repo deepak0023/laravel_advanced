@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Events\UserRegistration;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/userreg', function () {
+    return view('userregistration');
+});
+
+Route::post('/userreg', function () {
+
+    $name = request()->input('name');
+
+    event(new UserRegistration($name));
+
+    return view('userregistration');
+});
+
