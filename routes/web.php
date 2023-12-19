@@ -31,3 +31,9 @@ Route::post('/userreg', function () {
     return view('userregistration');
 });
 
+
+Route::get('/test-queue', function() {
+    dispatch(function() {
+        logger("test123");
+    });
+});
