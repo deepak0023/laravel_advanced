@@ -22,6 +22,19 @@ class TestJob implements ShouldQueue
     public $backoff = [2, 1, 10]; // waits for 2 seconds first and 1 second and then 10 seconds for futher jobs before trying the next job in case of failure
 
     public $maxException = 2; // only 2 exception tries allowed before moving it to failed job
+
+    public $shouldBeEncrypted = true; // paramter is passed in the encryted format
+
+    public $afterCommit = true; // within a sql transaction query is commited before job is dispatched
+
+    public $delay = 300;
+
+    public $connection = 'redis';
+
+    public $queue = "job1";
+
+    public $deleteWhenMissingModels = true; // does not throw exception if the model paramter passed to the job does not exist
+
     /**
      * Create a new job instance.
      */
