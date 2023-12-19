@@ -28,6 +28,8 @@ class TestJob implements ShouldQueue
      */
     public function handle(): void
     {
+        // throw new \Exception("this is a sample exception");
+
         logger("entered the job with this user : ".$this->user->name);
     }
 }
