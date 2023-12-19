@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Queue\Middleware\WithoutOverlapping;
 
-class TestJob3 implements ShouldQueue
+class TestJob3 implements ShouldQueue, ShouldBeUnique
 {
     use Batchable, Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -60,6 +60,8 @@ class TestJob3 implements ShouldQueue
 
         info("running job 3");
 
+        sleep(20);
+
         logger("This is test job 3");
     }
 
@@ -67,10 +69,17 @@ class TestJob3 implements ShouldQueue
         return ['tag_3'];
     }
 
-    public function middleware() {
-        return [
-            new WithoutOverlapping('job3_lock', 10) // 10 is try seconds for release of lock
-        ];
+    // public function middleware() {
+    //     return [
+    //         new WithoutOverlapping('job3_lock', 10) // 10 is try seconds for release of lock
+    //     ];
+    // }
+
+    public function uniqueId() {
+        return 'job3_lock';
     }
 
+    public function uniqueFor() {
+        return 30;
+    }
 }

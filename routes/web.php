@@ -94,23 +94,25 @@ Route::get('/test-queue', function() {
     // ->dispatch();
 
 
-    $parallel_batch = [
-        [
-            new App\Jobs\TestJob3(),
-            new App\Jobs\TestJob4()
-        ],
-        [
-            new App\Jobs\TestJob3(),
-            new App\Jobs\TestJob4()
-        ]
-    ];
+    // $parallel_batch = [
+    //     [
+    //         new App\Jobs\TestJob3(),
+    //         new App\Jobs\TestJob4()
+    //     ],
+    //     [
+    //         new App\Jobs\TestJob3(),
+    //         new App\Jobs\TestJob4()
+    //     ]
+    // ];
 
-    Bus::chain([
-        new App\Jobs\TestJob5(),
-        function() use ($parallel_batch) {
-            Bus::batch($parallel_batch)->dispatch();
-        }
-    ])->dispatch();
+    // Bus::chain([
+    //     new App\Jobs\TestJob5(),
+    //     function() use ($parallel_batch) {
+    //         Bus::batch($parallel_batch)->dispatch();
+    //     }
+    // ])->dispatch();
+
+    App\Jobs\TestJob3::dispatch();
 
     dd("done");
 });
