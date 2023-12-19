@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Events\UserRegistration;
+use App\Jobs\TestJob;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +35,12 @@ Route::post('/userreg', function () {
 
 
 Route::get('/test-queue', function() {
-    dispatch(function() {
-        logger("test123");
-    });
+    // dispatch(function() {
+    //     logger("test123");
+    // });
+    //->delay(now()->addMinutes(2));
+
+    $user = User::first();
+    dispatch(new TestJob($user));
+    dd("done");
 });
