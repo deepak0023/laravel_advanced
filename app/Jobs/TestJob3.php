@@ -11,6 +11,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redis;
+use Illuminate\Queue\Middleware\WithoutOverlapping;
 
 class TestJob3 implements ShouldQueue
 {
@@ -42,14 +43,14 @@ class TestJob3 implements ShouldQueue
         // Below code expects exception
         // it allow only one instance of job3 to run for 60 secconds but the other batch will only wait for 10 seconds
 
-        Redis::throttle('job3_lock')
-        ->allow(1)
-        ->every(60)
-        ->block(10)     // check for lock release for sec
-        ->then(function(){
-            sleep(5);
-            info("running job 3");
-        });
+        // Redis::throttle('job3_lock')
+        // ->allow(1)     // rate limiting
+        // ->every(60)      // per this many seconds
+        // ->block(10)     // check for lock release for sec
+        // ->then(function(){
+        //     sleep(5);
+        //     info("running job 3");
+        // });
 
 
         // Cache::lock('job3_lock')->block(10, function() {
@@ -57,10 +58,19 @@ class TestJob3 implements ShouldQueue
         //     info("running job 3");
         // });
 
+        info("running job 3");
+
         logger("This is test job 3");
     }
 
     public function tags() {
         return ['tag_3'];
     }
+
+    public function middleware() {
+        return [
+            new WithoutOverlapping('job3_lock', 10) // 10 is try seconds for release of lock
+        ];
+    }
+
 }
