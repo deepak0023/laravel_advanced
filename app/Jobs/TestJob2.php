@@ -24,11 +24,12 @@ class TestJob2 implements ShouldQueue
     /**
      * Execute the job.
      */
-    public function handle(): void
+    public function handle($string, $next)
     {
         // throw new \Exception("this is a sample exception");
 
         logger("This is test job 2");
+        return $next($string.": Passed through test job 2");
     }
 
     public function tags() {

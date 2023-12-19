@@ -5,6 +5,7 @@ use App\Events\UserRegistration;
 use App\Jobs\TestJob;
 use App\Models\User;
 use App\Jobs\TestJob2;
+use Illuminate\Pipeline\Pipeline;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +44,22 @@ Route::get('/test-queue', function() {
 
     $user = User::first();
     // dispatch(new TestJob($user));
-    TestJob::dispatch($user)->onQueue('default');
-    TestJob2::dispatch()->onQueue('high');
+    // TestJob::dispatch($user)->onQueue('default');
+    // TestJob2::dispatch()->onQueue('high');
+
+    app(Pipeline::class)
+    ->send('hello world')
+    ->through([
+        function($string, $next) {
+            return $next(ucwords($string));
+        },
+        function($string, $next) {
+            return $next($string. ": passed pipe 2");
+        },
+        TestJob2::class
+    ])->then(function($string) {
+        dump($string);
+    });
+
     dd("done");
 });
