@@ -27,7 +27,7 @@ class TestJob3 implements ShouldQueue
      */
     public function handle(): void
     {
-        throw new \Exception("this is a sample exception");
+        // throw new \Exception("this is a sample exception");
 
         logger("This is test job 3");
     }

@@ -64,8 +64,14 @@ Route::get('/test-queue', function() {
 
 
     $batch = [
-        new App\Jobs\TestJob3(),
-        new App\Jobs\TestJob4()
+        [
+            new App\Jobs\TestJob3(),
+            new App\Jobs\TestJob4()
+        ],
+        [
+            new App\Jobs\TestJob3(),
+            new App\Jobs\TestJob4()
+        ]
     ];
 
     Bus::batch($batch)
