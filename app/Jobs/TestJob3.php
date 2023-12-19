@@ -9,6 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Cache;
 
 class TestJob3 implements ShouldQueue
 {
@@ -28,6 +29,11 @@ class TestJob3 implements ShouldQueue
     public function handle(): void
     {
         // throw new \Exception("this is a sample exception");
+
+        Cache::lock('job3_lock')->block(10, function() {
+            sleep(5);
+            info("running job 3");
+        });
 
         logger("This is test job 3");
     }
