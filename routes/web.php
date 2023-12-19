@@ -63,13 +63,14 @@ Route::get('/test-queue', function() {
     // });
 
 
-    $chain = [
+    $batch = [
         new App\Jobs\TestJob3(),
         new App\Jobs\TestJob4()
     ];
 
-    Bus::chain($chain)->dispatch();
-
+    Bus::batch($batch)
+    ->allowFailures()  // allow failures so that other jobs could be run [opposite of if($this->batch()->cancelled())]
+    ->dispatch();
 
     dd("done");
 });

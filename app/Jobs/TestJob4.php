@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Bus\Batchable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -11,7 +12,7 @@ use Illuminate\Queue\SerializesModels;
 
 class TestJob4 implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Batchable, Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     /**
      * Create a new job instance.
@@ -27,6 +28,12 @@ class TestJob4 implements ShouldQueue
     public function handle(): void
     {
         // throw new \Exception("this is a sample exception");
+
+        // check if any other job in the batch got exception
+        if($this->batch()->cancelled()) {
+            info("job3 got cancelled so not moving forward");
+            return;
+        }
 
         logger("This is test job 4");
     }

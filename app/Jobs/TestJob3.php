@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Bus\Batchable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -11,7 +12,7 @@ use Illuminate\Queue\SerializesModels;
 
 class TestJob3 implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Batchable, Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     /**
      * Create a new job instance.
@@ -26,12 +27,12 @@ class TestJob3 implements ShouldQueue
      */
     public function handle(): void
     {
-        // throw new \Exception("this is a sample exception");
+        throw new \Exception("this is a sample exception");
 
         logger("This is test job 3");
     }
 
     public function tags() {
-        return ['tag_2'];
+        return ['tag_3'];
     }
 }
