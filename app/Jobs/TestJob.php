@@ -15,6 +15,13 @@ class TestJob implements ShouldQueue
 
     public $user;
 
+    public $timeout = 60; // setting timeout for the job
+
+    public $tries = 3; // tries the job three times before moving it to failed job
+
+    public $backoff = [2, 1, 10]; // waits for 2 seconds first and 1 second and then 10 seconds for futher jobs before trying the next job in case of failure
+
+    public $maxException = 2; // only 2 exception tries allowed before moving it to failed job
     /**
      * Create a new job instance.
      */
@@ -31,9 +38,30 @@ class TestJob implements ShouldQueue
         // throw new \Exception("this is a sample exception");
 
         logger("This is test job 1");
+
+        // $this->release() // again run the job after certian time
     }
 
     public function tags() {
-        return ['sample_tag'];
+        return ['tag_1'];
+    }
+
+    /**
+     * Retry the job untill specified amount of time
+     * This will overwrite the $tries property on top
+     * @return void
+     */
+    public function retryUntill() {
+        return now()->oneMinute();
+    }
+
+    /**
+     * Get to this function when the job is failed on exception
+     *
+     * @param [type] $e
+     * @return void
+     */
+    public function failed($e) {
+        info('failed');
     }
 }
