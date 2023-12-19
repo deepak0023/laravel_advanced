@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Events\UserRegistration;
 use App\Jobs\TestJob;
 use App\Models\User;
+use App\Jobs\TestJob2;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,7 @@ Route::get('/test-queue', function() {
 
     $user = User::first();
     // dispatch(new TestJob($user));
-    TestJob::dispatch($user);
+    TestJob::dispatch($user)->onQueue('default');
+    TestJob2::dispatch()->onQueue('high');
     dd("done");
 });
