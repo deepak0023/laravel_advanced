@@ -32,4 +32,8 @@ class TestJob implements ShouldQueue
 
         logger("entered the job with this user : ".$this->user->name);
     }
+
+    public function tags() {
+        return ['sample_tag'];
+    }
 }
