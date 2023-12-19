@@ -63,7 +63,38 @@ Route::get('/test-queue', function() {
     // });
 
 
-    $batch = [
+    // $batch = [
+    //     [
+    //         new App\Jobs\TestJob3(),
+    //         new App\Jobs\TestJob4()
+    //     ],
+    //     [
+    //         new App\Jobs\TestJob3(),
+    //         new App\Jobs\TestJob4()
+    //     ]
+    // ];
+
+    // Bus::batch($batch)
+    // ->onQueue('high')
+    // ->onConnection('redis')
+    // ->allowFailures()  // allow failures so that other jobs could be run [opposite of if($this->batch()->cancelled())]
+    // ->catch(function($batch, $e) {
+    //     logger('-----------------------------------------------');
+    //     info('catched exception');
+    //     logger($e);
+    //     logger($batch);
+    //     logger('-----------------------------------------------');
+    // })
+    // ->finally(function() {    // runs after all jobs are excuted successfully
+    //     info('got into finally block');
+    // })
+    // ->then(function() {    // runs after all jobs are excuted successfully
+    //     info('all jobs executed successfully');
+    // })
+    // ->dispatch();
+
+
+    $parallel_batch = [
         [
             new App\Jobs\TestJob3(),
             new App\Jobs\TestJob4()
@@ -74,24 +105,12 @@ Route::get('/test-queue', function() {
         ]
     ];
 
-    Bus::batch($batch)
-    ->onQueue('high')
-    ->onConnection('redis')
-    ->allowFailures()  // allow failures so that other jobs could be run [opposite of if($this->batch()->cancelled())]
-    ->catch(function($batch, $e) {
-        logger('-----------------------------------------------');
-        info('catched exception');
-        logger($e);
-        logger($batch);
-        logger('-----------------------------------------------');
-    })
-    ->finally(function() {    // runs after all jobs are excuted successfully
-        info('got into finally block');
-    })
-    ->then(function() {    // runs after all jobs are excuted successfully
-        info('all jobs executed successfully');
-    })
-    ->dispatch();
+    Bus::chain([
+        new App\Jobs\TestJob5(),
+        function() use ($parallel_batch) {
+            Bus::batch($parallel_batch)->dispatch();
+        }
+    ])->dispatch();
 
     dd("done");
 });
