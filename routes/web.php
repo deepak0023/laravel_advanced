@@ -41,6 +41,7 @@ Route::get('/test-queue', function() {
     //->delay(now()->addMinutes(2));
 
     $user = User::first();
-    dispatch(new TestJob($user));
+    // dispatch(new TestJob($user));
+    TestJob::dispatch($user);
     dd("done");
 });
