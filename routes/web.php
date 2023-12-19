@@ -69,7 +69,22 @@ Route::get('/test-queue', function() {
     ];
 
     Bus::batch($batch)
+    ->onQueue('high')
+    ->onConnection('redis')
     ->allowFailures()  // allow failures so that other jobs could be run [opposite of if($this->batch()->cancelled())]
+    ->catch(function($batch, $e) {
+        logger('-----------------------------------------------');
+        info('catched exception');
+        logger($e);
+        logger($batch);
+        logger('-----------------------------------------------');
+    })
+    ->finally(function() {    // runs after all jobs are excuted successfully
+        info('got into finally block');
+    })
+    ->then(function() {    // runs after all jobs are excuted successfully
+        info('all jobs executed successfully');
+    })
     ->dispatch();
 
     dd("done");
