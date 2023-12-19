@@ -6,6 +6,7 @@ use App\Jobs\TestJob;
 use App\Models\User;
 use App\Jobs\TestJob2;
 use Illuminate\Pipeline\Pipeline;
+use Illuminate\Support\Facades\Bus;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,24 +43,33 @@ Route::get('/test-queue', function() {
     // });
     //->delay(now()->addMinutes(2));
 
-    $user = User::first();
+    // $user = User::first();
     // dispatch(new TestJob($user));
     // TestJob::dispatch($user)->onQueue('default');
     // TestJob2::dispatch()->onQueue('high');
 
-    app(Pipeline::class)
-    ->send('hello world')
-    ->through([
-        function($string, $next) {
-            return $next(ucwords($string));
-        },
-        function($string, $next) {
-            return $next($string. ": passed pipe 2");
-        },
-        TestJob2::class
-    ])->then(function($string) {
-        dump($string);
-    });
+    // app(Pipeline::class)
+    // ->send('hello world')
+    // ->through([
+    //     function($string, $next) {
+    //         return $next(ucwords($string));
+    //     },
+    //     function($string, $next) {
+    //         return $next($string. ": passed pipe 2");
+    //     },
+    //     TestJob2::class
+    // ])->then(function($string) {
+    //     dump($string);
+    // });
+
+
+    $chain = [
+        new App\Jobs\TestJob3(),
+        new App\Jobs\TestJob4()
+    ];
+
+    Bus::chain($chain)->dispatch();
+
 
     dd("done");
 });
