@@ -1,0 +1,424 @@
+[00:00:00.001354218 / 00:00:00.001257682] [8388608 bytes] PHPUnit Started (PHPUnit 10.5.3 using PHP 8.1.2-1ubuntu2.14 (cli) on Linux)
+[00:00:00.007547364 / 00:00:00.006193146] [8388608 bytes] Test Runner Configured
+[00:00:00.007675130 / 00:00:00.000127766] [8388608 bytes] Bootstrap Finished (/home/deepak/Project/github/laravel_advanced/vendor/autoload.php)
+[00:00:00.014801513 / 00:00:00.007126383] [10485760 bytes] Data Provider Method Called (AttributeTest::additionProvider for test method AttributeTest::Add)
+[00:00:00.014816061 / 00:00:00.000014548] [10485760 bytes] Data Provider Method Finished for AttributeTest::Add:
+                                                           - AttributeTest::additionProvider
+[00:00:00.017782604 / 00:00:00.002966543] [10485760 bytes] Test Suite Loaded (21 tests)
+[00:00:00.027967677 / 00:00:00.010185073] [10485760 bytes] Event Facade Sealed
+[00:00:00.028185477 / 00:00:00.000217800] [10485760 bytes] Test Runner Started
+[00:00:00.028567603 / 00:00:00.000382126] [10485760 bytes] Test Suite Sorted
+[00:00:00.028784320 / 00:00:00.000216717] [10485760 bytes] Test Runner Execution Started (21 tests)
+[00:00:00.028843424 / 00:00:00.000059104] [10485760 bytes] Test Suite Started (/home/deepak/Project/github/laravel_advanced/phpunit.xml, 21 tests)
+[00:00:00.028929920 / 00:00:00.000086496] [10485760 bytes] Test Suite Started (Unit, 21 tests)
+[00:00:00.029030915 / 00:00:00.000100995] [10485760 bytes] Test Suite Started (AttributeTest, 5 tests)
+[00:00:00.030509612 / 00:00:00.001478697] [12582912 bytes] Test Suite Started (AttributeTest::Add, 4 tests)
+[00:00:00.031255429 / 00:00:00.000745817] [12582912 bytes] Test Preparation Started (AttributeTest::Add#data set 1)
+[00:00:00.083909024 / 00:00:00.052653595] [25165824 bytes] Before Test Method Called (AttributeTest::setUp)
+[00:00:00.083975121 / 00:00:00.000066097] [25165824 bytes] Before Test Method Finished:
+                                                           - AttributeTest::setUp
+[00:00:00.084013916 / 00:00:00.000038795] [25165824 bytes] Test Prepared (AttributeTest::Add#data set 1)
+[00:00:00.084311278 / 00:00:00.000297362] [25165824 bytes] Assertion Succeeded (Constraint: is identical to 0, Value: 0)
+[00:00:00.084405289 / 00:00:00.000094011] [25165824 bytes] Test Passed (AttributeTest::Add#data set 1)
+[00:00:00.086513750 / 00:00:00.002108461] [25165824 bytes] After Test Method Called (AttributeTest::tearDown)
+[00:00:00.086555921 / 00:00:00.000042171] [25165824 bytes] After Test Method Finished:
+                                                           - AttributeTest::tearDown
+[00:00:00.087393203 / 00:00:00.000837282] [25165824 bytes] Test Finished (AttributeTest::Add#data set 1)
+[00:00:00.087479159 / 00:00:00.000085956] [25165824 bytes] Test Preparation Started (AttributeTest::Add#data set 2)
+[00:00:00.091591287 / 00:00:00.004112128] [25165824 bytes] Before Test Method Called (AttributeTest::setUp)
+[00:00:00.091629361 / 00:00:00.000038074] [25165824 bytes] Before Test Method Finished:
+                                                           - AttributeTest::setUp
+[00:00:00.091659849 / 00:00:00.000030488] [25165824 bytes] Test Prepared (AttributeTest::Add#data set 2)
+[00:00:00.091714264 / 00:00:00.000054415] [25165824 bytes] Assertion Succeeded (Constraint: is identical to 2, Value: 2)
+[00:00:00.091772126 / 00:00:00.000057862] [25165824 bytes] Test Passed (AttributeTest::Add#data set 2)
+[00:00:00.091941562 / 00:00:00.000169436] [25165824 bytes] After Test Method Called (AttributeTest::tearDown)
+[00:00:00.091974315 / 00:00:00.000032753] [25165824 bytes] After Test Method Finished:
+                                                           - AttributeTest::tearDown
+[00:00:00.092084437 / 00:00:00.000110122] [25165824 bytes] Test Finished (AttributeTest::Add#data set 2)
+[00:00:00.092150113 / 00:00:00.000065676] [25165824 bytes] Test Preparation Started (AttributeTest::Add#data set 3)
+[00:00:00.095932247 / 00:00:00.003782134] [25165824 bytes] Before Test Method Called (AttributeTest::setUp)
+[00:00:00.095970601 / 00:00:00.000038354] [25165824 bytes] Before Test Method Finished:
+                                                           - AttributeTest::setUp
+[00:00:00.096012050 / 00:00:00.000041449] [25165824 bytes] Test Prepared (AttributeTest::Add#data set 3)
+[00:00:00.096061476 / 00:00:00.000049426] [25165824 bytes] Assertion Succeeded (Constraint: is identical to 1, Value: 1)
+[00:00:00.096094780 / 00:00:00.000033304] [25165824 bytes] Test Passed (AttributeTest::Add#data set 3)
+[00:00:00.096180034 / 00:00:00.000085254] [25165824 bytes] After Test Method Called (AttributeTest::tearDown)
+[00:00:00.096207657 / 00:00:00.000027623] [25165824 bytes] After Test Method Finished:
+                                                           - AttributeTest::tearDown
+[00:00:00.096293062 / 00:00:00.000085405] [25165824 bytes] Test Finished (AttributeTest::Add#data set 3)
+[00:00:00.096349931 / 00:00:00.000056869] [25165824 bytes] Test Preparation Started (AttributeTest::Add#data set 4)
+[00:00:00.100017864 / 00:00:00.003667933] [25165824 bytes] Before Test Method Called (AttributeTest::setUp)
+[00:00:00.100054836 / 00:00:00.000036972] [25165824 bytes] Before Test Method Finished:
+                                                           - AttributeTest::setUp
+[00:00:00.100094221 / 00:00:00.000039385] [25165824 bytes] Test Prepared (AttributeTest::Add#data set 4)
+[00:00:00.100125512 / 00:00:00.000031291] [25165824 bytes] Assertion Succeeded (Constraint: is identical to 4, Value: 4)
+[00:00:00.100157293 / 00:00:00.000031781] [25165824 bytes] Test Passed (AttributeTest::Add#data set 4)
+[00:00:00.100230714 / 00:00:00.000073421] [25165824 bytes] After Test Method Called (AttributeTest::tearDown)
+[00:00:00.100257616 / 00:00:00.000026902] [25165824 bytes] After Test Method Finished:
+                                                           - AttributeTest::tearDown
+[00:00:00.100338903 / 00:00:00.000081287] [25165824 bytes] Test Finished (AttributeTest::Add#data set 4)
+[00:00:00.100381956 / 00:00:00.000043053] [25165824 bytes] Test Suite Finished (AttributeTest::Add, 4 tests)
+[00:00:00.100607981 / 00:00:00.000226025] [25165824 bytes] Test Preparation Started (AttributeTest::test_add_numbers)
+[00:00:00.104192263 / 00:00:00.003584282] [25165824 bytes] Before Test Method Called (AttributeTest::setUp)
+[00:00:00.104228994 / 00:00:00.000036731] [25165824 bytes] Before Test Method Finished:
+                                                           - AttributeTest::setUp
+[00:00:00.104258861 / 00:00:00.000029867] [25165824 bytes] Test Prepared (AttributeTest::test_add_numbers)
+[00:00:00.104290542 / 00:00:00.000031681] [25165824 bytes] Assertion Succeeded (Constraint: is identical to 3, Value: 3)
+[00:00:00.104320931 / 00:00:00.000030389] [25165824 bytes] Assertion Succeeded (Constraint: is identical to 'name1', Value: 'name1')
+[00:00:00.104526186 / 00:00:00.000205255] [25165824 bytes] Assertion Succeeded (Constraint: exception of type "Exception", Value: Exception Object #1707 (
+                                                               'message' => 'The input value must be a string',
+                                                               'string' => '',
+                                                               'code' => 0,
+                                                               'file' => '/home/deepak/Project/github/laravel_advanced/app/Models/User.php',
+                                                               'line' => 54,
+                                                               'previous' => null,
+                                                           ))
+[00:00:00.104604687 / 00:00:00.000078501] [25165824 bytes] Test Passed (AttributeTest::test_add_numbers)
+[00:00:00.104688569 / 00:00:00.000083882] [25165824 bytes] After Test Method Called (AttributeTest::tearDown)
+[00:00:00.104717104 / 00:00:00.000028535] [25165824 bytes] After Test Method Finished:
+                                                           - AttributeTest::tearDown
+[00:00:00.104761329 / 00:00:00.000044225] [25165824 bytes] Test Finished (AttributeTest::test_add_numbers)
+[00:00:00.104939833 / 00:00:00.000178504] [25165824 bytes] After Last Test Method Called (AttributeTest::tearDownAfterClass)
+[00:00:00.104976473 / 00:00:00.000036640] [25165824 bytes] After Last Test Method Finished:
+                                                           - AttributeTest::tearDownAfterClass
+[00:00:00.105003024 / 00:00:00.000026551] [25165824 bytes] Test Suite Finished (AttributeTest, 5 tests)
+[00:00:00.105055225 / 00:00:00.000052201] [25165824 bytes] Test Suite Started (Tests\Unit\ExampleTest, 16 tests)
+[00:00:00.106277298 / 00:00:00.001222073] [25165824 bytes] Test Preparation Started (Tests\Unit\ExampleTest::test_that_true_is_true)
+[00:00:00.113095358 / 00:00:00.006818060] [25165824 bytes] Before Test Method Called (Tests\Unit\ExampleTest::setUp)
+[00:00:00.113132179 / 00:00:00.000036821] [25165824 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::setUp
+[00:00:00.113161506 / 00:00:00.000029327] [25165824 bytes] Test Prepared (Tests\Unit\ExampleTest::test_that_true_is_true)
+[00:00:00.113235138 / 00:00:00.000073632] [25165824 bytes] Assertion Succeeded (Constraint: is true, Value: true)
+[00:00:00.113270275 / 00:00:00.000035137] [25165824 bytes] Test Passed (Tests\Unit\ExampleTest::test_that_true_is_true)
+[00:00:00.113352985 / 00:00:00.000082710] [25165824 bytes] After Test Method Called (Tests\Unit\ExampleTest::tearDown)
+[00:00:00.113381049 / 00:00:00.000028064] [25165824 bytes] After Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::tearDown
+[00:00:00.113429392 / 00:00:00.000048343] [25165824 bytes] Test Finished (Tests\Unit\ExampleTest::test_that_true_is_true)
+[00:00:00.113472585 / 00:00:00.000043193] [25165824 bytes] Test Preparation Started (Tests\Unit\ExampleTest::test_that_false_is_false)
+[00:00:00.117067948 / 00:00:00.003595363] [25165824 bytes] Before Test Method Called (Tests\Unit\ExampleTest::setUp)
+[00:00:00.117113657 / 00:00:00.000045709] [25165824 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::setUp
+[00:00:00.117143253 / 00:00:00.000029596] [25165824 bytes] Test Prepared (Tests\Unit\ExampleTest::test_that_false_is_false)
+[00:00:00.117215503 / 00:00:00.000072250] [25165824 bytes] Assertion Succeeded (Constraint: is false, Value: false)
+[00:00:00.117249809 / 00:00:00.000034306] [25165824 bytes] Test Passed (Tests\Unit\ExampleTest::test_that_false_is_false)
+[00:00:00.117339461 / 00:00:00.000089652] [25165824 bytes] After Test Method Called (Tests\Unit\ExampleTest::tearDown)
+[00:00:00.117367405 / 00:00:00.000027944] [25165824 bytes] After Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::tearDown
+[00:00:00.117410428 / 00:00:00.000043023] [25165824 bytes] Test Finished (Tests\Unit\ExampleTest::test_that_false_is_false)
+[00:00:00.117451848 / 00:00:00.000041420] [25165824 bytes] Test Preparation Started (Tests\Unit\ExampleTest::test_on_string)
+[00:00:00.121010962 / 00:00:00.003559114] [25165824 bytes] Before Test Method Called (Tests\Unit\ExampleTest::setUp)
+[00:00:00.121047462 / 00:00:00.000036500] [25165824 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::setUp
+[00:00:00.121078942 / 00:00:00.000031480] [25165824 bytes] Test Prepared (Tests\Unit\ExampleTest::test_on_string)
+[00:00:00.121244080 / 00:00:00.000165138] [25165824 bytes] Assertion Succeeded (Constraint: matches format description:
+                                                           %a %i, Value: 'abc 1')
+[00:00:00.121336979 / 00:00:00.000092899] [25165824 bytes] Assertion Succeeded (Constraint: matches PCRE pattern "/foo/", Value: 'foo')
+[00:00:00.121410270 / 00:00:00.000073291] [25165824 bytes] Assertion Succeeded (Constraint: is null, Value: null)
+[00:00:00.121491627 / 00:00:00.000081357] [25165824 bytes] Assertion Succeeded (Constraint: starts with "fo", Value: 'foo')
+[00:00:00.121561001 / 00:00:00.000069374] [25165824 bytes] Assertion Succeeded (Constraint: ends with "o", Value: 'foo')
+[00:00:00.121695610 / 00:00:00.000134609] [25165824 bytes] Assertion Succeeded (Constraint: contains "bar" [ASCII](length: 3), Value: 'foobar')
+[00:00:00.121738152 / 00:00:00.000042542] [25165824 bytes] Assertion Succeeded (Constraint: contains "foo" [Encoding ignored](length: 3), Value: 'FOOBAR')
+[00:00:00.121770224 / 00:00:00.000032072] [25165824 bytes] Test Passed (Tests\Unit\ExampleTest::test_on_string)
+[00:00:00.121849376 / 00:00:00.000079152] [25165824 bytes] After Test Method Called (Tests\Unit\ExampleTest::tearDown)
+[00:00:00.121877240 / 00:00:00.000027864] [25165824 bytes] After Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::tearDown
+[00:00:00.121920433 / 00:00:00.000043193] [25165824 bytes] Test Finished (Tests\Unit\ExampleTest::test_on_string)
+[00:00:00.121961131 / 00:00:00.000040698] [25165824 bytes] Test Preparation Started (Tests\Unit\ExampleTest::test_for_same_value_and_type)
+[00:00:00.125571854 / 00:00:00.003610723] [25165824 bytes] Before Test Method Called (Tests\Unit\ExampleTest::setUp)
+[00:00:00.125608425 / 00:00:00.000036571] [25165824 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::setUp
+[00:00:00.125637962 / 00:00:00.000029537] [25165824 bytes] Test Prepared (Tests\Unit\ExampleTest::test_for_same_value_and_type)
+[00:00:00.125667939 / 00:00:00.000029977] [25165824 bytes] Assertion Succeeded (Constraint: is identical to '12', Value: '12')
+[00:00:00.125698088 / 00:00:00.000030149] [25165824 bytes] Assertion Succeeded (Constraint: is identical to Array &0 [
+                                                               'a' => Array &1 [
+                                                                   0 => 'abc',
+                                                                   1 => 'efg',
+                                                               ],
+                                                           ], Value: Array &0 [
+                                                               'a' => Array &1 [
+                                                                   0 => 'abc',
+                                                                   1 => 'efg',
+                                                               ],
+                                                           ])
+[00:00:00.125751320 / 00:00:00.000053232] [25165824 bytes] Test Passed (Tests\Unit\ExampleTest::test_for_same_value_and_type)
+[00:00:00.125829130 / 00:00:00.000077810] [25165824 bytes] After Test Method Called (Tests\Unit\ExampleTest::tearDown)
+[00:00:00.125856733 / 00:00:00.000027603] [25165824 bytes] After Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::tearDown
+[00:00:00.125899365 / 00:00:00.000042632] [25165824 bytes] Test Finished (Tests\Unit\ExampleTest::test_for_same_value_and_type)
+[00:00:00.125940094 / 00:00:00.000040729] [25165824 bytes] Test Preparation Started (Tests\Unit\ExampleTest::test_for_same_value)
+[00:00:00.129479519 / 00:00:00.003539425] [25165824 bytes] Before Test Method Called (Tests\Unit\ExampleTest::setUp)
+[00:00:00.129515899 / 00:00:00.000036380] [25165824 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::setUp
+[00:00:00.129544875 / 00:00:00.000028976] [25165824 bytes] Test Prepared (Tests\Unit\ExampleTest::test_for_same_value)
+[00:00:00.129677491 / 00:00:00.000132616] [25165824 bytes] Assertion Succeeded (Constraint: is equal to '12', Value: 12)
+[00:00:00.129714332 / 00:00:00.000036841] [25165824 bytes] Assertion Succeeded (Constraint: is equal to Array &0 [
+                                                               'a' => Array &1 [
+                                                                   0 => 'abc',
+                                                                   1 => 'efg',
+                                                               ],
+                                                           ], Value: Array &0 [
+                                                               'a' => Array &1 [
+                                                                   0 => 'abc',
+                                                                   1 => 'efg',
+                                                               ],
+                                                           ])
+[00:00:00.129777533 / 00:00:00.000063201] [25165824 bytes] Test Passed (Tests\Unit\ExampleTest::test_for_same_value)
+[00:00:00.129858209 / 00:00:00.000080676] [25165824 bytes] After Test Method Called (Tests\Unit\ExampleTest::tearDown)
+[00:00:00.129885912 / 00:00:00.000027703] [25165824 bytes] After Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::tearDown
+[00:00:00.129928564 / 00:00:00.000042652] [25165824 bytes] Test Finished (Tests\Unit\ExampleTest::test_for_same_value)
+[00:00:00.129968711 / 00:00:00.000040147] [25165824 bytes] Test Preparation Started (Tests\Unit\ExampleTest::test_for_same_value_ignoring_case)
+[00:00:00.133509209 / 00:00:00.003540498] [25165824 bytes] Before Test Method Called (Tests\Unit\ExampleTest::setUp)
+[00:00:00.133546191 / 00:00:00.000036982] [25165824 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::setUp
+[00:00:00.133575447 / 00:00:00.000029256] [25165824 bytes] Test Prepared (Tests\Unit\ExampleTest::test_for_same_value_ignoring_case)
+[00:00:00.133706139 / 00:00:00.000130692] [25165824 bytes] Assertion Succeeded (Constraint: is equal to 'abc', Value: 'ABC')
+[00:00:00.133770332 / 00:00:00.000064193] [25165824 bytes] Assertion Succeeded (Constraint: is equal to Array &0 [
+                                                               'a' => Array &1 [
+                                                                   0 => 'Abc',
+                                                                   1 => 'efG',
+                                                               ],
+                                                           ], Value: Array &0 [
+                                                               'a' => Array &1 [
+                                                                   0 => 'abC',
+                                                                   1 => 'efg',
+                                                               ],
+                                                           ])
+[00:00:00.133834315 / 00:00:00.000063983] [25165824 bytes] Test Passed (Tests\Unit\ExampleTest::test_for_same_value_ignoring_case)
+[00:00:00.133922726 / 00:00:00.000088411] [25165824 bytes] After Test Method Called (Tests\Unit\ExampleTest::tearDown)
+[00:00:00.133950449 / 00:00:00.000027723] [25165824 bytes] After Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::tearDown
+[00:00:00.133993332 / 00:00:00.000042883] [25165824 bytes] Test Finished (Tests\Unit\ExampleTest::test_for_same_value_ignoring_case)
+[00:00:00.134033649 / 00:00:00.000040317] [25165824 bytes] Test Preparation Started (Tests\Unit\ExampleTest::test_for_same_value_ignoring_delta)
+[00:00:00.137638301 / 00:00:00.003604652] [25165824 bytes] Before Test Method Called (Tests\Unit\ExampleTest::setUp)
+[00:00:00.137676354 / 00:00:00.000038053] [25165824 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::setUp
+[00:00:00.137705941 / 00:00:00.000029587] [25165824 bytes] Test Prepared (Tests\Unit\ExampleTest::test_for_same_value_ignoring_delta)
+[00:00:00.137819890 / 00:00:00.000113949] [25165824 bytes] Assertion Succeeded (Constraint: is equal to 1.0 with delta <0.500000>, Value: 1.5)
+[00:00:00.137865799 / 00:00:00.000045909] [25165824 bytes] Test Passed (Tests\Unit\ExampleTest::test_for_same_value_ignoring_delta)
+[00:00:00.137951294 / 00:00:00.000085495] [25165824 bytes] After Test Method Called (Tests\Unit\ExampleTest::tearDown)
+[00:00:00.137979578 / 00:00:00.000028284] [25165824 bytes] After Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::tearDown
+[00:00:00.138030416 / 00:00:00.000050838] [25165824 bytes] Test Finished (Tests\Unit\ExampleTest::test_for_same_value_ignoring_delta)
+[00:00:00.138073599 / 00:00:00.000043183] [25165824 bytes] Test Preparation Started (Tests\Unit\ExampleTest::test_for_file_content)
+[00:00:00.141723137 / 00:00:00.003649538] [27262976 bytes] Before Test Method Called (Tests\Unit\ExampleTest::setUp)
+[00:00:00.141759687 / 00:00:00.000036550] [27262976 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::setUp
+[00:00:00.141789485 / 00:00:00.000029798] [27262976 bytes] Test Prepared (Tests\Unit\ExampleTest::test_for_file_content)
+[00:00:00.141879909 / 00:00:00.000090424] [27262976 bytes] Assertion Succeeded (Constraint: file exists, Value: '/home/deepak/Project/github/laravel_advanced/storage/app/test.txt')
+[00:00:00.141918122 / 00:00:00.000038213] [27262976 bytes] Assertion Succeeded (Constraint: file exists, Value: '/home/deepak/Project/github/laravel_advanced/storage/app/test_2.txt')
+[00:00:00.141977367 / 00:00:00.000059245] [27262976 bytes] Assertion Succeeded (Constraint: is equal to <text>, Value: 'Sample text\n
+                                                           ')
+[00:00:00.142009979 / 00:00:00.000032612] [27262976 bytes] Assertion Succeeded (Constraint: file exists, Value: '/home/deepak/Project/github/laravel_advanced/storage/app/test.txt')
+[00:00:00.142062831 / 00:00:00.000052852] [27262976 bytes] Assertion Succeeded (Constraint: matches format description:
+                                                           Sample text, Value: 'Sample text\n
+                                                           ')
+[00:00:00.142096566 / 00:00:00.000033735] [27262976 bytes] Assertion Succeeded (Constraint: file exists, Value: '/home/deepak/Project/github/laravel_advanced/storage/app/test.txt')
+[00:00:00.142125552 / 00:00:00.000028986] [27262976 bytes] Assertion Succeeded (Constraint: file exists, Value: '/home/deepak/Project/github/laravel_advanced/storage/app/test_2.txt')
+[00:00:00.142182361 / 00:00:00.000056809] [27262976 bytes] Assertion Succeeded (Constraint: matches format description:
+                                                           Sample text
+                                                           , Value: 'Sample text\n
+                                                           ')
+[00:00:00.142217559 / 00:00:00.000035198] [27262976 bytes] Assertion Succeeded (Constraint: file exists, Value: '/home/deepak/Project/github/laravel_advanced/storage/app/test.txt')
+[00:00:00.142253188 / 00:00:00.000035629] [27262976 bytes] Assertion Succeeded (Constraint: is equal to <text>, Value: 'Sample text\n
+                                                           ')
+[00:00:00.142282464 / 00:00:00.000029276] [27262976 bytes] Assertion Succeeded (Constraint: file exists, Value: '/home/deepak/Project/github/laravel_advanced/storage/app/test.txt')
+[00:00:00.142321609 / 00:00:00.000039145] [27262976 bytes] Assertion Succeeded (Constraint: is equal to <text>, Value: 'sample text\n
+                                                           ')
+[00:00:00.142350134 / 00:00:00.000028525] [27262976 bytes] Test Passed (Tests\Unit\ExampleTest::test_for_file_content)
+[00:00:00.142429617 / 00:00:00.000079483] [27262976 bytes] After Test Method Called (Tests\Unit\ExampleTest::tearDown)
+[00:00:00.142458002 / 00:00:00.000028385] [27262976 bytes] After Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::tearDown
+[00:00:00.142501847 / 00:00:00.000043845] [27262976 bytes] Test Finished (Tests\Unit\ExampleTest::test_for_file_content)
+[00:00:00.142542405 / 00:00:00.000040558] [27262976 bytes] Test Preparation Started (Tests\Unit\ExampleTest::test_for_array_has)
+[00:00:00.146149992 / 00:00:00.003607587] [27262976 bytes] Before Test Method Called (Tests\Unit\ExampleTest::setUp)
+[00:00:00.146192443 / 00:00:00.000042451] [27262976 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::setUp
+[00:00:00.146223183 / 00:00:00.000030740] [27262976 bytes] Test Prepared (Tests\Unit\ExampleTest::test_for_array_has)
+[00:00:00.146360096 / 00:00:00.000136913] [27262976 bytes] Assertion Succeeded (Constraint: is of type array, Value: Array &0 [
+                                                               'key_1' => 'abc',
+                                                               'key_2' => 'efg',
+                                                           ])
+[00:00:00.146481600 / 00:00:00.000121504] [27262976 bytes] Assertion Succeeded (Constraint: has the key 'key_1', Value: Array &0 [
+                                                               'key_1' => 'abc',
+                                                               'key_2' => 'efg',
+                                                           ])
+[00:00:00.146715741 / 00:00:00.000234141] [27262976 bytes] Assertion Succeeded (Constraint: does not have the key 'key_3', Value: Array &0 [
+                                                               'key_1' => 'abc',
+                                                               'key_2' => 'efg',
+                                                           ])
+[00:00:00.146948109 / 00:00:00.000232368] [27262976 bytes] Assertion Succeeded (Constraint: contains 2, Value: Array &0 [
+                                                               0 => 'val_1',
+                                                               1 => 2,
+                                                               2 => 'val_3',
+                                                           ])
+[00:00:00.146994959 / 00:00:00.000046850] [27262976 bytes] Assertion Succeeded (Constraint: contains 'abc', Value: Array &0 [
+                                                               'key_1' => 'abc',
+                                                               'key_2' => 'efg',
+                                                           ])
+[00:00:00.147033744 / 00:00:00.000038785] [27262976 bytes] Assertion Succeeded (Constraint: does not contain 'b', Value: Array &0 [
+                                                               'key_1' => 'abc',
+                                                               'key_2' => 'efg',
+                                                           ])
+[00:00:00.147114078 / 00:00:00.000080334] [27262976 bytes] Assertion Succeeded (Constraint: is a list, Value: Array &0 [
+                                                               0 => 'foo',
+                                                               1 => 'ooo',
+                                                               2 => 'bar',
+                                                           ])
+[00:00:00.147157071 / 00:00:00.000042993] [27262976 bytes] Test Passed (Tests\Unit\ExampleTest::test_for_array_has)
+[00:00:00.147239119 / 00:00:00.000082048] [27262976 bytes] After Test Method Called (Tests\Unit\ExampleTest::tearDown)
+[00:00:00.147266602 / 00:00:00.000027483] [27262976 bytes] After Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::tearDown
+[00:00:00.147310286 / 00:00:00.000043684] [27262976 bytes] Test Finished (Tests\Unit\ExampleTest::test_for_array_has)
+[00:00:00.147350423 / 00:00:00.000040137] [27262976 bytes] Test Preparation Started (Tests\Unit\ExampleTest::test_for_array_type_check)
+[00:00:00.150907062 / 00:00:00.003556639] [27262976 bytes] Before Test Method Called (Tests\Unit\ExampleTest::setUp)
+[00:00:00.150943923 / 00:00:00.000036861] [27262976 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::setUp
+[00:00:00.150974292 / 00:00:00.000030369] [27262976 bytes] Test Prepared (Tests\Unit\ExampleTest::test_for_array_type_check)
+[00:00:00.151077501 / 00:00:00.000103209] [27262976 bytes] Assertion Succeeded (Constraint: contains only values of type "string", Value: Array &0 [
+                                                               'key_1' => 'abc',
+                                                               'key_2' => 'efg',
+                                                           ])
+[00:00:00.151131675 / 00:00:00.000054174] [27262976 bytes] Test Passed (Tests\Unit\ExampleTest::test_for_array_type_check)
+[00:00:00.151213873 / 00:00:00.000082198] [27262976 bytes] After Test Method Called (Tests\Unit\ExampleTest::tearDown)
+[00:00:00.151241356 / 00:00:00.000027483] [27262976 bytes] After Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::tearDown
+[00:00:00.151283848 / 00:00:00.000042492] [27262976 bytes] Test Finished (Tests\Unit\ExampleTest::test_for_array_type_check)
+[00:00:00.151324266 / 00:00:00.000040418] [27262976 bytes] Test Preparation Started (Tests\Unit\ExampleTest::test_for_array_count)
+[00:00:00.154859544 / 00:00:00.003535278] [27262976 bytes] Before Test Method Called (Tests\Unit\ExampleTest::setUp)
+[00:00:00.154896475 / 00:00:00.000036931] [27262976 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::setUp
+[00:00:00.154925731 / 00:00:00.000029256] [27262976 bytes] Test Prepared (Tests\Unit\ExampleTest::test_for_array_count)
+[00:00:00.155057665 / 00:00:00.000131934] [27262976 bytes] Assertion Succeeded (Constraint: count matches 2, Value: Array &0 [
+                                                               'key_1' => 'abc',
+                                                               'key_2' => 'efg',
+                                                           ])
+[00:00:00.155138711 / 00:00:00.000081046] [27262976 bytes] Assertion Succeeded (Constraint: count matches 2, Value: Array &0 [
+                                                               0 => 'val_1',
+                                                               1 => 2,
+                                                           ])
+[00:00:00.155231620 / 00:00:00.000092909] [27262976 bytes] Assertion Succeeded (Constraint: is empty, Value: Array &0 [])
+[00:00:00.155270114 / 00:00:00.000038494] [27262976 bytes] Test Passed (Tests\Unit\ExampleTest::test_for_array_count)
+[00:00:00.155350800 / 00:00:00.000080686] [27262976 bytes] After Test Method Called (Tests\Unit\ExampleTest::tearDown)
+[00:00:00.155378794 / 00:00:00.000027994] [27262976 bytes] After Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::tearDown
+[00:00:00.155421917 / 00:00:00.000043123] [27262976 bytes] Test Finished (Tests\Unit\ExampleTest::test_for_array_count)
+[00:00:00.155463126 / 00:00:00.000041209] [27262976 bytes] Test Preparation Started (Tests\Unit\ExampleTest::test_for_comparing_numbers)
+[00:00:00.159054843 / 00:00:00.003591717] [27262976 bytes] Before Test Method Called (Tests\Unit\ExampleTest::setUp)
+[00:00:00.159091163 / 00:00:00.000036320] [27262976 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::setUp
+[00:00:00.159120579 / 00:00:00.000029416] [27262976 bytes] Test Prepared (Tests\Unit\ExampleTest::test_for_comparing_numbers)
+[00:00:00.159404746 / 00:00:00.000284167] [27262976 bytes] Assertion Succeeded (Constraint: is equal to 1 or is greater than 1, Value: 2)
+[00:00:00.159448421 / 00:00:00.000043675] [27262976 bytes] Assertion Succeeded (Constraint: is greater than 1, Value: 2)
+[00:00:00.159518926 / 00:00:00.000070505] [27262976 bytes] Assertion Succeeded (Constraint: is less than 2, Value: 1)
+[00:00:00.159564254 / 00:00:00.000045328] [27262976 bytes] Assertion Succeeded (Constraint: is equal to 2 or is less than 2, Value: 1)
+[00:00:00.159600053 / 00:00:00.000035799] [27262976 bytes] Test Passed (Tests\Unit\ExampleTest::test_for_comparing_numbers)
+[00:00:00.159679776 / 00:00:00.000079723] [27262976 bytes] After Test Method Called (Tests\Unit\ExampleTest::tearDown)
+[00:00:00.159708441 / 00:00:00.000028665] [27262976 bytes] After Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::tearDown
+[00:00:00.159758227 / 00:00:00.000049786] [27262976 bytes] Test Finished (Tests\Unit\ExampleTest::test_for_comparing_numbers)
+[00:00:00.159800268 / 00:00:00.000042041] [27262976 bytes] Test Preparation Started (Tests\Unit\ExampleTest::test_for_json_values)
+[00:00:00.163384961 / 00:00:00.003584693] [27262976 bytes] Before Test Method Called (Tests\Unit\ExampleTest::setUp)
+[00:00:00.163421091 / 00:00:00.000036130] [27262976 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::setUp
+[00:00:00.163450317 / 00:00:00.000029226] [27262976 bytes] Test Prepared (Tests\Unit\ExampleTest::test_for_json_values)
+[00:00:00.163557423 / 00:00:00.000107106] [27262976 bytes] Assertion Succeeded (Constraint: is valid JSON, Value: '{"a":"b"}')
+[00:00:00.163598332 / 00:00:00.000040909] [27262976 bytes] Assertion Succeeded (Constraint: file exists, Value: '/home/deepak/Project/github/laravel_advanced/storage/app/test_3.json')
+[00:00:00.163629993 / 00:00:00.000031661] [27262976 bytes] Assertion Succeeded (Constraint: file exists, Value: '/home/deepak/Project/github/laravel_advanced/storage/app/test_4.json')
+[00:00:00.163682684 / 00:00:00.000052691] [27262976 bytes] Assertion Succeeded (Constraint: is valid JSON, Value: '{\n
+                                                               "a":"b"\n
+                                                           }\n
+                                                           ')
+[00:00:00.163709596 / 00:00:00.000026912] [27262976 bytes] Assertion Succeeded (Constraint: is valid JSON, Value: '{"a":"b"}\n
+                                                           ')
+[00:00:00.163888050 / 00:00:00.000178454] [27262976 bytes] Assertion Succeeded (Constraint: matches JSON string "{"a":"b"}
+                                                           ", Value: '{\n
+                                                               "a":"b"\n
+                                                           }\n
+                                                           ')
+[00:00:00.163928277 / 00:00:00.000040227] [27262976 bytes] Assertion Succeeded (Constraint: matches JSON string "{
+                                                               "a":"b"
+                                                           }
+                                                           ", Value: '{"a":"b"}\n
+                                                           ')
+[00:00:00.163958997 / 00:00:00.000030720] [27262976 bytes] Assertion Succeeded (Constraint: is valid JSON, Value: '{"a":"b"}')
+[00:00:00.163986109 / 00:00:00.000027112] [27262976 bytes] Assertion Succeeded (Constraint: is valid JSON, Value: '{"a":"b"}')
+[00:00:00.164014253 / 00:00:00.000028144] [27262976 bytes] Assertion Succeeded (Constraint: matches JSON string "{"a":"b"}", Value: '{"a":"b"}')
+[00:00:00.164043018 / 00:00:00.000028765] [27262976 bytes] Test Passed (Tests\Unit\ExampleTest::test_for_json_values)
+[00:00:00.164122622 / 00:00:00.000079604] [27262976 bytes] After Test Method Called (Tests\Unit\ExampleTest::tearDown)
+[00:00:00.164150275 / 00:00:00.000027653] [27262976 bytes] After Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::tearDown
+[00:00:00.164193228 / 00:00:00.000042953] [27262976 bytes] Test Finished (Tests\Unit\ExampleTest::test_for_json_values)
+[00:00:00.164233946 / 00:00:00.000040718] [27262976 bytes] Test Preparation Started (Tests\Unit\ExampleTest::test_for_xml_values)
+[00:00:00.167773472 / 00:00:00.003539526] [27262976 bytes] Before Test Method Called (Tests\Unit\ExampleTest::setUp)
+[00:00:00.167809451 / 00:00:00.000035979] [27262976 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::setUp
+[00:00:00.167864828 / 00:00:00.000055377] [27262976 bytes] Test Prepared (Tests\Unit\ExampleTest::test_for_xml_values)
+[00:00:00.167986412 / 00:00:00.000121584] [27262976 bytes] Assertion Succeeded (Constraint: is equal to DOMDocument Object #3303 (
+                                                               'config' => null,
+                                                           ), Value: DOMDocument Object #3424 (
+                                                               'config' => null,
+                                                           ))
+[00:00:00.168069632 / 00:00:00.000083220] [27262976 bytes] Assertion Succeeded (Constraint: is equal to DOMDocument Object #3303 (
+                                                               'config' => null,
+                                                           ), Value: DOMDocument Object #3420 (
+                                                               'config' => null,
+                                                           ))
+[00:00:00.168149105 / 00:00:00.000079473] [27262976 bytes] Assertion Succeeded (Constraint: is equal to DOMDocument Object #3303 (
+                                                               'config' => null,
+                                                           ), Value: DOMDocument Object #3424 (
+                                                               'config' => null,
+                                                           ))
+[00:00:00.168191467 / 00:00:00.000042362] [27262976 bytes] Test Passed (Tests\Unit\ExampleTest::test_for_xml_values)
+[00:00:00.168277863 / 00:00:00.000086396] [27262976 bytes] After Test Method Called (Tests\Unit\ExampleTest::tearDown)
+[00:00:00.168305797 / 00:00:00.000027934] [27262976 bytes] After Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::tearDown
+[00:00:00.168348379 / 00:00:00.000042582] [27262976 bytes] Test Finished (Tests\Unit\ExampleTest::test_for_xml_values)
+[00:00:00.168388697 / 00:00:00.000040318] [27262976 bytes] Test Preparation Started (Tests\Unit\ExampleTest::test_for_files_and_directories)
+[00:00:00.171961226 / 00:00:00.003572529] [27262976 bytes] Before Test Method Called (Tests\Unit\ExampleTest::setUp)
+[00:00:00.171997637 / 00:00:00.000036411] [27262976 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::setUp
+[00:00:00.172027123 / 00:00:00.000029486] [27262976 bytes] Test Prepared (Tests\Unit\ExampleTest::test_for_files_and_directories)
+[00:00:00.172105915 / 00:00:00.000078792] [27262976 bytes] Assertion Succeeded (Constraint: directory exists, Value: '/home/deepak/Project/github/laravel_advanced/storage/app')
+[00:00:00.172139400 / 00:00:00.000033485] [27262976 bytes] Assertion Succeeded (Constraint: directory exists, Value: '/home/deepak/Project/github/laravel_advanced/storage/app')
+[00:00:00.172207050 / 00:00:00.000067650] [27262976 bytes] Assertion Succeeded (Constraint: is readable, Value: '/home/deepak/Project/github/laravel_advanced/storage/app')
+[00:00:00.172237579 / 00:00:00.000030529] [27262976 bytes] Assertion Succeeded (Constraint: directory exists, Value: '/home/deepak/Project/github/laravel_advanced/storage/app')
+[00:00:00.172267446 / 00:00:00.000029867] [27262976 bytes] Assertion Succeeded (Constraint: is readable, Value: '/home/deepak/Project/github/laravel_advanced/storage/app')
+[00:00:00.172295690 / 00:00:00.000028244] [27262976 bytes] Assertion Succeeded (Constraint: file exists, Value: '/home/deepak/Project/github/laravel_advanced/storage/app/test.txt')
+[00:00:00.172323514 / 00:00:00.000027824] [27262976 bytes] Assertion Succeeded (Constraint: file exists, Value: '/home/deepak/Project/github/laravel_advanced/storage/app/test_6.xml')
+[00:00:00.172350175 / 00:00:00.000026661] [27262976 bytes] Assertion Succeeded (Constraint: is readable, Value: '/home/deepak/Project/github/laravel_advanced/storage/app/test_6.xml')
+[00:00:00.172377007 / 00:00:00.000026832] [27262976 bytes] Assertion Succeeded (Constraint: file exists, Value: '/home/deepak/Project/github/laravel_advanced/storage/app/test_6.xml')
+[00:00:00.172444277 / 00:00:00.000067270] [27262976 bytes] Assertion Succeeded (Constraint: is writable, Value: '/home/deepak/Project/github/laravel_advanced/storage/app/test_6.xml')
+[00:00:00.172482891 / 00:00:00.000038614] [27262976 bytes] Test Passed (Tests\Unit\ExampleTest::test_for_files_and_directories)
+[00:00:00.172563286 / 00:00:00.000080395] [27262976 bytes] After Test Method Called (Tests\Unit\ExampleTest::tearDown)
+[00:00:00.172590648 / 00:00:00.000027362] [27262976 bytes] After Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::tearDown
+[00:00:00.172632900 / 00:00:00.000042252] [27262976 bytes] Test Finished (Tests\Unit\ExampleTest::test_for_files_and_directories)
+[00:00:00.172673518 / 00:00:00.000040618] [27262976 bytes] Test Preparation Started (Tests\Unit\ExampleTest::test_for_datatypes)
+[00:00:00.176286305 / 00:00:00.003612787] [27262976 bytes] Before Test Method Called (Tests\Unit\ExampleTest::setUp)
+[00:00:00.176322836 / 00:00:00.000036531] [27262976 bytes] Before Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::setUp
+[00:00:00.176352974 / 00:00:00.000030138] [27262976 bytes] Test Prepared (Tests\Unit\ExampleTest::test_for_datatypes)
+[00:00:00.176388141 / 00:00:00.000035167] [27262976 bytes] Assertion Succeeded (Constraint: is of type array, Value: Array &0 [])
+[00:00:00.176423980 / 00:00:00.000035839] [27262976 bytes] Assertion Succeeded (Constraint: is of type bool, Value: true)
+[00:00:00.176450411 / 00:00:00.000026431] [27262976 bytes] Assertion Succeeded (Constraint: is of type float, Value: 1.2)
+[00:00:00.176478004 / 00:00:00.000027593] [27262976 bytes] Assertion Succeeded (Constraint: is of type int, Value: 2)
+[00:00:00.176505147 / 00:00:00.000027143] [27262976 bytes] Assertion Succeeded (Constraint: is of type numeric, Value: 5)
+[00:00:00.176530556 / 00:00:00.000025409] [27262976 bytes] Assertion Succeeded (Constraint: is of type object, Value: stdClass Object #3650 ())
+[00:00:00.176560593 / 00:00:00.000030037] [27262976 bytes] Assertion Succeeded (Constraint: is of type string, Value: 'abc')
+[00:00:00.176587335 / 00:00:00.000026742] [27262976 bytes] Assertion Succeeded (Constraint: is null, Value: null)
+[00:00:00.176651198 / 00:00:00.000063863] [27262976 bytes] Assertion Succeeded (Constraint: is nan, Value: NAN)
+[00:00:00.176685273 / 00:00:00.000034075] [27262976 bytes] Test Passed (Tests\Unit\ExampleTest::test_for_datatypes)
+[00:00:00.176763544 / 00:00:00.000078271] [27262976 bytes] After Test Method Called (Tests\Unit\ExampleTest::tearDown)
+[00:00:00.176791047 / 00:00:00.000027503] [27262976 bytes] After Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::tearDown
+[00:00:00.176833268 / 00:00:00.000042221] [27262976 bytes] Test Finished (Tests\Unit\ExampleTest::test_for_datatypes)
+[00:00:00.176941737 / 00:00:00.000108469] [27262976 bytes] After Last Test Method Called (Tests\Unit\ExampleTest::tearDownAfterClass)
+[00:00:00.176967968 / 00:00:00.000026231] [27262976 bytes] After Last Test Method Finished:
+                                                           - Tests\Unit\ExampleTest::tearDownAfterClass
+[00:00:00.176991613 / 00:00:00.000023645] [27262976 bytes] Test Suite Finished (Tests\Unit\ExampleTest, 16 tests)
+[00:00:00.177019998 / 00:00:00.000028385] [27262976 bytes] Test Suite Finished (Unit, 21 tests)
+[00:00:00.177045006 / 00:00:00.000025008] [27262976 bytes] Test Suite Finished (/home/deepak/Project/github/laravel_advanced/phpunit.xml, 21 tests)
+[00:00:00.177226105 / 00:00:00.000181099] [27262976 bytes] Test Runner Execution Finished
+[00:00:00.180474731 / 00:00:00.003248626] [27262976 bytes] Test Runner Finished
+[00:00:00.180752917 / 00:00:00.000278186] [27262976 bytes] PHPUnit Finished (Shell Exit Code: 0)

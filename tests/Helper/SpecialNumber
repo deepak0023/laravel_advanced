@@ -8,7 +8,7 @@ final class SpecialNumber
 
     public function __construct(string $special_number)
     {
-        if(!$this->ensureIsValidEmail($special_number)) {
+        if(!$this->ensureIsValidNumber($special_number)) {
             throw \Exception("Value not within range");
         }
 
@@ -25,7 +25,7 @@ final class SpecialNumber
     //     return $this->asString() === $other->asString();
     // }
 
-    private function ensureIsValidEmail(string $special_number): bool
+    private function ensureIsValidNumber(string $special_number): bool
     {
         return (($special_number >= 0) && ($special_number <= 5));
     }

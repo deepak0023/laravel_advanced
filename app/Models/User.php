@@ -42,4 +42,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public static function addNumbers($a, $b) {
+        return $a + $b;
+    }
+
+    public function getName($name) {
+        if(is_string($name)) {
+            return $name;
+        } else {
+            throw new \Exception("The input value must be a string");
+        }
+    }
 }
