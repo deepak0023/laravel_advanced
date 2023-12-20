@@ -1,0 +1,32 @@
+<?php
+
+namespace Tests\Helper;
+
+final class SpecialNumber
+{
+    private string $special_number;
+
+    public function __construct(string $special_number)
+    {
+        if(!$this->ensureIsValidEmail($special_number)) {
+            throw \Exception("Value not within range");
+        }
+
+        $this->special_number = $special_number;
+    }
+
+    public function asString(): string
+    {
+        return $this->special_number;
+    }
+
+    // public function equals(self $other): bool
+    // {
+    //     return $this->asString() === $other->asString();
+    // }
+
+    private function ensureIsValidEmail(string $special_number): bool
+    {
+        return (($special_number >= 0) && ($special_number <= 5));
+    }
+}

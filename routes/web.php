@@ -116,3 +116,7 @@ Route::get('/test-queue', function() {
 
     dd("done");
 });
+
+Route::get('/test', function() {
+    dd(storage_path('app/test.txt'));
+});
