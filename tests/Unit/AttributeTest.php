@@ -59,4 +59,65 @@ class AttributeTest extends TestCase
         $name = $this->user->getName(12);
         $this->assertSame("name1", $name);
     }
+
+    /**
+     * A basic test example.
+     */
+    public function test_get_api_json_response_response(): void
+    {
+
+        $this->get(route('test-api', ["name" => "name1"]))->assertStatus(422);
+        $json_content = $this->get('/api/test-api?name=name1')->decodeResponseJson()->json;
+        $data = json_decode($json_content, true);
+        $this->assertSame("E001", $data["errorCode"]);
+        $this->assertSame("name1", $data["name"]);
+    }
+
+    /**
+     * A basic test example.
+     */
+    public function test_post_api_json_response_response(): void
+    {
+        $this->post(route('test-api', ["name" => "name1"]))->assertStatus(200);
+        $json_content = $this->post('/api/test-api', ["name" => "name1"])->decodeResponseJson()->json;
+        $data = json_decode($json_content, true);
+        $this->assertSame("0000", $data["errorCode"]);
+        $this->assertSame("name1", $data["name"]);
+    }
+
+    /**
+     * A basic test example.
+     */
+    public function test_put_api_json_response_response(): void
+    {
+        $this->put(route('test-api', ["name" => "name1"]))->assertStatus(200);
+        $json_content = $this->put('/api/test-api', ["name" => "name1"])->decodeResponseJson()->json;
+        $data = json_decode($json_content, true);
+        $this->assertSame("0001", $data["errorCode"]);
+        $this->assertSame("name1", $data["name"]);
+    }
+
+    /**
+     * A basic test example.
+     */
+    public function test_patch_api_json_response_response(): void
+    {
+        $this->patch(route('test-api', ["name" => "name1"]))->assertStatus(200);
+        $json_content = $this->patch('/api/test-api', ["name" => "name1"])->decodeResponseJson()->json;
+        $data = json_decode($json_content, true);
+        $this->assertSame("0002", $data["errorCode"]);
+        $this->assertSame("name1", $data["name"]);
+    }
+
+    /**
+     * A basic test example.
+     */
+    public function test_delete_api_json_response_response(): void
+    {
+        $this->delete(route('test-api', ["name" => "name1"]))->assertStatus(200);
+        $json_content = $this->delete('/api/test-api', ["name" => "name1"])->decodeResponseJson()->json;
+        $data = json_decode($json_content, true);
+        $this->assertSame("0003", $data["errorCode"]);
+        $this->assertSame("name1", $data["name"]);
+    }
 }
