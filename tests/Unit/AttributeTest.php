@@ -7,6 +7,9 @@ use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\TestDox;
 use App\Models\User;
 use Exception;
+use Symfony\Component\Console\Application as ConsoleApplication;
+use App\Console\Commands\TestCommand;
+use Symfony\Component\Console\Tester\CommandTester;
 
 class AttributeTest extends TestCase
 {
@@ -119,5 +122,37 @@ class AttributeTest extends TestCase
         $data = json_decode($json_content, true);
         $this->assertSame("0003", $data["errorCode"]);
         $this->assertSame("name1", $data["name"]);
+    }
+
+    /** @test */
+    public function check_console_command_output()
+    {
+        $application = new ConsoleApplication();
+
+        $testedCommand = $this->app->make(TestCommand::class);
+        $testedCommand->setLaravel(app());
+        $application->add($testedCommand);
+
+        // Test for success
+
+        $command = $application->find('app:test-command');
+
+        $commandTester = new CommandTester($command);
+
+        $commandTester->execute([
+            'command' => $command->getName(),
+            'type' => 'success'
+        ]);
+
+        $this->assertStringContainsString('Command Successfull', $commandTester->getDisplay());
+
+        // Test for failed
+
+        $commandTester->execute([
+            'command' => $command->getName(),
+            'type' => 'failed'
+        ]);
+
+        $this->assertStringContainsString('Command Failed', $commandTester->getDisplay());
     }
 }
