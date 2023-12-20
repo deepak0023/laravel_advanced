@@ -18,63 +18,62 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-Route::get('/test-api', function(Request $request) {
+Route::get('/test-api', function (Request $request) {
 
     $param = $request->input('name');
 
     return response()->json([
-        'status'    => 'error',
+        'status' => 'error',
         'errorCode' => 'E001',
-        'message'   => "Some Error",
-        'name'      => $param
+        'message' => 'Some Error',
+        'name' => $param,
     ], 422);
-})-> name('test-api');
+})->name('test-api');
 
-Route::post('/test-api', function(Request $request) {
+Route::post('/test-api', function (Request $request) {
 
     $param = $request->input('name');
 
     return response()->json([
-        'status'    => 'success',
+        'status' => 'success',
         'errorCode' => '0000',
-        'message'   => "Success",
-        'name'      => $param
+        'message' => 'Success',
+        'name' => $param,
     ], 200);
-})-> name('test-api');
+})->name('test-api');
 
-Route::put('/test-api', function(Request $request) {
+Route::put('/test-api', function (Request $request) {
 
     $param = $request->input('name');
 
     return response()->json([
-        'status'    => 'success',
+        'status' => 'success',
         'errorCode' => '0001',
-        'message'   => "Success",
-        'name'      => $param
+        'message' => 'Success',
+        'name' => $param,
     ], 200);
-})-> name('test-api');
+})->name('test-api');
 
-Route::patch('/test-api', function(Request $request) {
+Route::patch('/test-api', function (Request $request) {
 
     $param = $request->input('name');
 
     return response()->json([
-        'status'    => 'success',
+        'status' => 'success',
         'errorCode' => '0002',
-        'message'   => "Success",
-        'name'      => $param
+        'message' => 'Success',
+        'name' => $param,
     ], 200);
-})-> name('test-api');
+})->name('test-api');
 
-Route::delete('/test-api', function(Request $request) {
+Route::delete('/test-api', function (Request $request) {
 
     $param = $request->input('name');
 
     return response()->json([
-        'status'    => 'success',
+        'status' => 'success',
         'errorCode' => '0003',
-        'message'   => "Success",
-        'name'      => $param
+        'message' => 'Success',
+        'name' => $param,
     ], 200);
-})-> name('test-api');
+})->name('test-api');

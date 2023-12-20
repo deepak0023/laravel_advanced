@@ -2,9 +2,8 @@
 
 namespace App\Jobs;
 
-use Illuminate\Bus\Queueable;
 use Illuminate\Bus\Batchable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
+use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
@@ -30,15 +29,17 @@ class TestJob4 implements ShouldQueue
         // throw new \Exception("this is a sample exception");
 
         // check if any other job in the batch got exception
-        if($this->batch()->cancelled()) {
-            info("job3 got cancelled so not moving forward");
+        if ($this->batch()->cancelled()) {
+            info('job3 got cancelled so not moving forward');
+
             return;
         }
 
-        logger("This is test job 4");
+        logger('This is test job 4');
     }
 
-    public function tags() {
+    public function tags()
+    {
         return ['tag_4'];
     }
 }

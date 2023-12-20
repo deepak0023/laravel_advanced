@@ -3,7 +3,6 @@
 namespace App\Jobs;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
@@ -31,7 +30,7 @@ class TestJob implements ShouldQueue
 
     public $connection = 'redis';
 
-    public $queue = "job1";
+    public $queue = 'job1';
 
     public $deleteWhenMissingModels = true; // does not throw exception if the model paramter passed to the job does not exist
 
@@ -50,21 +49,24 @@ class TestJob implements ShouldQueue
     {
         // throw new \Exception("this is a sample exception");
 
-        logger("This is test job 1");
+        logger('This is test job 1');
 
         // $this->release() // again run the job after certian time
     }
 
-    public function tags() {
+    public function tags()
+    {
         return ['tag_1'];
     }
 
     /**
      * Retry the job untill specified amount of time
      * This will overwrite the $tries property on top
+     *
      * @return void
      */
-    public function retryUntill() {
+    public function retryUntill()
+    {
         return now()->oneMinute();
     }
 
@@ -74,7 +76,8 @@ class TestJob implements ShouldQueue
      * @param [type] $e
      * @return void
      */
-    public function failed($e) {
+    public function failed($e)
+    {
         info('failed');
     }
 }

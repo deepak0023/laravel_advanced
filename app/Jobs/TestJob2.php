@@ -3,7 +3,6 @@
 namespace App\Jobs;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
@@ -28,11 +27,13 @@ class TestJob2 implements ShouldQueue
     {
         // throw new \Exception("this is a sample exception");
 
-        logger("This is test job 2");
-        return $next($string.": Passed through test job 2");
+        logger('This is test job 2');
+
+        return $next($string.': Passed through test job 2');
     }
 
-    public function tags() {
+    public function tags()
+    {
         return ['tag_2'];
     }
 }
