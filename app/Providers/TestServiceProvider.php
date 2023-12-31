@@ -3,8 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Support\DeferrableProvider;
 
-class TestServiceProvider extends ServiceProvider
+class TestServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
      * Register services.

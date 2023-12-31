@@ -19,9 +19,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-dump(app()->make("Hello"));
+
 
 Route::get('/', function () {
+    dump(app()); // Check for list of service provider loaded
+    dump(app()->make("Hello"));
     return view('welcome');
 });
 
@@ -117,5 +119,6 @@ Route::get('/test-queue', function () {
 });
 
 Route::get('/test', function () {
+    dump(app());  // Check for list of service provider loaded
     dd(storage_path('app/test.txt'));
 });
