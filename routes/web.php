@@ -176,9 +176,9 @@ Route::get('/facade', function() {
     //     }
     // }
 
-    dump("Facade", FishFacade::swim());
+    dump("Facade", FishFacade::swim("val_1"));
 
-    dump("Bike", BikeFacade::ride());
+    dump("Bike", BikeFacade::ride("val_2"));
 });
 
 

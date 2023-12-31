@@ -18,12 +18,13 @@ class TestServiceProvider extends ServiceProvider
             return "Hello";
         });
 
-        app()->bind('Fish', function($app) {
-            return new FishRepository;
+        app()->bind('Fish', function($app, $paramters) {
+            // dd($paramters);  // getting all paramters in array format
+            return new FishRepository($paramters);
         });
 
-        app()->bind('Bike', function() {
-            return new BikeRepository;
+        app()->bind('Bike', function($app, $paramters) {
+            return new BikeRepository($paramters);
         });
     }
 
