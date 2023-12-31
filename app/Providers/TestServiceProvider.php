@@ -11,6 +11,9 @@ class TestServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        app()->bind('Hello', function() {
+            return "Hello";
+        });
     }
 
     /**
