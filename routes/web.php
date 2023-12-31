@@ -177,3 +177,27 @@ Route::get('/facade', function() {
 
     dump("Bike", BikeFacade::ride());
 });
+
+
+
+Route::get('/container', function() {
+    class Container {
+        protected $bindings = [];
+
+        public function bind($name, Callable $resolver) {
+            $this->binding[$name] = $resolver;
+        }
+        public function make($name) {
+            return $this->binding[$name]();
+        }
+    }
+
+    $container = new Container();
+
+    $container->bind('Game', function() {
+        return 'Football';
+    });
+
+    dump("Container", $container->make('Game'));
+
+});
