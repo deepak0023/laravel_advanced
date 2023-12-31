@@ -8,6 +8,8 @@ use Illuminate\Pipeline\Pipeline;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
+use App\Facades\FishFacade;
+use App\Facades\BikeFacade;
 
 /*
 |--------------------------------------------------------------------------
@@ -125,54 +127,54 @@ Route::get('/test', function () {
 });
 
 Route::get('/facade', function() {
-    class Fish {
-        public function swim() {
-            return 'swiming';
-        }
-        public function eat() {
-            return 'eating';
-        }
-    }
+    // class Fish {
+    //     public function swim() {
+    //         return 'swiming';
+    //     }
+    //     public function eat() {
+    //         return 'eating';
+    //     }
+    // }
 
-    app()->bind('Fish', function() {
-        return new Fish;
-    });
+    // app()->bind('Fish', function() {
+    //     return new Fish;
+    // });
 
-    dump("Service Provider", app()->make('Fish')->swim());
+    // dump("Service Provider", app()->make('Fish')->swim());
 
-    class Bike {
-        public function horn() {
-            return 'horning';
-        }
-        public function ride() {
-            return 'riding';
-        }
-    }
+    // class Bike {
+    //     public function horn() {
+    //         return 'horning';
+    //     }
+    //     public function ride() {
+    //         return 'riding';
+    //     }
+    // }
 
-    app()->bind('Bike', function() {
-        return new Bike;
-    });
+    // app()->bind('Bike', function() {
+    //     return new Bike;
+    // });
 
-    class Facade {
-        public static function __callStatic($name, $args) {
-            return app()->make(static::getFacadeAccessor($name, $args))->$name();
-        }
-        public static function getFacadeAccessor($name, $args) {
-            //
-        }
-    }
+    // class Facade {
+    //     public static function __callStatic($name, $args) {
+    //         return app()->make(static::getFacadeAccessor($name, $args))->$name();
+    //     }
+    //     public static function getFacadeAccessor($name, $args) {
+    //         //
+    //     }
+    // }
 
-    class FishFacade extends Facade {
-        public static function getFacadeAccessor($name, $args) {
-            return 'Fish';
-        }
-    }
+    // class FishFacade extends Facade {
+    //     public static function getFacadeAccessor($name, $args) {
+    //         return 'Fish';
+    //     }
+    // }
 
-    class BikeFacade extends Facade {
-        public static function getFacadeAccessor($name, $args) {
-            return 'Bike';
-        }
-    }
+    // class BikeFacade extends Facade {
+    //     public static function getFacadeAccessor($name, $args) {
+    //         return 'Bike';
+    //     }
+    // }
 
     dump("Facade", FishFacade::swim());
 
