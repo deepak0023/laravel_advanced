@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>TODO</h1>
+    <p>Welcom {{ config('todo.todo_name') }}</p>
     <form action="{{ route('todo') }}" method="POST">
         <input name="todo_name" />
         <br>
