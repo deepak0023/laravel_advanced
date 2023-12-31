@@ -1,0 +1,19 @@
+{
+    "name": "deepak0023/todo",
+    "description": "This package is created for testing purpose",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Deepak P",
+            "email": "deepakpalakkal795@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload-dev": {
+        "psr-4": {
+            "Deepak0023\\Todo": "src/"
+        }
+    }
+}

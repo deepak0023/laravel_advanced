@@ -171,6 +171,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\TelescopeServiceProvider::class,
         App\Providers\TestServiceProvider::class,
+        Deepak0023\Todo\TestServiceProvider::class
     ])->toArray(),
 
     /*
