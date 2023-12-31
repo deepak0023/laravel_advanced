@@ -19,10 +19,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-app()->bind('Hello', function() {
-    return "Hello";
-});
-
 dump(app()->make("Hello"));
 
 Route::get('/', function () {
