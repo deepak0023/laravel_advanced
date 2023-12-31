@@ -9,7 +9,7 @@
 <body>
     <h1>TODO</h1>
     <form action="{{ route('todo') }}" method="POST">
-        <input name="name" />
+        <input name="todo_name" />
         <br>
         <input type="submit" value="Submit"/>
     </form>

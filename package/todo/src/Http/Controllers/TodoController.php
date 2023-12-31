@@ -4,6 +4,7 @@ namespace Deepak0023\Todo\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Deepak0023\Todo\Models\Todo;
 
 class TodoController extends Controller
 {
@@ -12,6 +13,8 @@ class TodoController extends Controller
     }
 
     public function create(Request $request) {
-        dd($request->all());
+        // dd($request->all());
+        Todo::create($request->all());
+        return redirect('todo');
     }
 }
