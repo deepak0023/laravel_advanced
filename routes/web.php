@@ -137,16 +137,43 @@ Route::get('/facade', function() {
         return new Fish;
     });
 
-
     dump("Service Provider", app()->make('Fish')->swim());
 
-    class FishFacade {
-        public static function __callStatic($name, $args) {
-            return app()->make('Fish')->$name();
+    class Bike {
+        public function horn() {
+            return 'horning';
+        }
+        public function ride() {
+            return 'riding';
         }
     }
 
-    dd("Facade", FishFacade::swim());
+    app()->bind('Bike', function() {
+        return new Bike;
+    });
 
+    class Facade {
+        public static function __callStatic($name, $args) {
+            return app()->make(static::getFacadeAccessor($name, $args))->$name();
+        }
+        public static function getFacadeAccessor($name, $args) {
+            //
+        }
+    }
 
+    class FishFacade extends Facade {
+        public static function getFacadeAccessor($name, $args) {
+            return 'Fish';
+        }
+    }
+
+    class BikeFacade extends Facade {
+        public static function getFacadeAccessor($name, $args) {
+            return 'Bike';
+        }
+    }
+
+    dump("Facade", FishFacade::swim());
+
+    dump("Bike", BikeFacade::ride());
 });
