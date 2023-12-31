@@ -12,7 +12,9 @@ class TestServiceProvider extends ServiceProvider {
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
         $this->mergeConfigFrom(__DIR__.'/config/todo.php', 'todo');
         $this->publishes([
-            __DIR__.'/config/todo.php' => config_path('todo.php')
+            __DIR__.'/config/todo.php' => config_path('todo.php'),
+            __DIR__.'/views' => resource_path('views/vendor/todo'),
+            __DIR__.'/database/migrations' => database_path('migrations')
         ]);
     }
 
