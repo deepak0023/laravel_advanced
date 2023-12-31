@@ -200,4 +200,31 @@ Route::get('/container', function() {
 
     dump("Container", $container->make('Game'));
 
+    class Sample3 {
+        public function __construct() {
+        }
+    }
+
+    class Sample2 {
+        public function __construct(Sample3 $sample3) {
+            $this->sample3 = $sample3;
+        }
+    }
+
+
+    class Sample1 {
+        public function __construct(Sample2 $sample2) {
+            $this->sample2 = $sample2;
+        }
+    }
+
+    // app()->bind('Sample1', function() {
+    //     return new Sample1(new Sample2(new Sample3));
+    // });
+
+    // dd(app()->make('Sample1'));
+
+    // instead of the above ^^
+
+    dd(resolve('Sample1'));  // does autodiscovery of class using reflection class
 });
