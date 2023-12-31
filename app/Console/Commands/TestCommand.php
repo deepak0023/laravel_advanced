@@ -27,14 +27,14 @@ class TestCommand extends Command
     {
         $type = $this->argument('type');
 
-        if($type == "success") {
-            $this->info("----------------------");
-            $this->info("Command Successfull !!");
-            $this->info("----------------------");
+        if ($type == 'success') {
+            $this->info('----------------------');
+            $this->info('Command Successfull !!');
+            $this->info('----------------------');
         } else {
-            $this->info("----------------------");
-            $this->info("Command Failed !!");
-            $this->info("----------------------");
+            $this->info('----------------------');
+            $this->info('Command Failed !!');
+            $this->info('----------------------');
         }
     }
 }

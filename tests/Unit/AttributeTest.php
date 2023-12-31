@@ -1,19 +1,18 @@
 <?php
-use Tests\Helper\SpecialNumber;
+
 // use PHPUnit\Framework\TestCase;
-use Tests\TestCase;
-use PHPUnit\Framework\Attributes\Test;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\TestDox;
+use App\Console\Commands\TestCommand;
 use App\Models\User;
 use Exception;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\Attributes\TestDox;
 use Symfony\Component\Console\Application as ConsoleApplication;
-use App\Console\Commands\TestCommand;
 use Symfony\Component\Console\Tester\CommandTester;
+use Tests\TestCase;
 
 class AttributeTest extends TestCase
 {
-
     private $user;
 
     public function setUp(): void
@@ -37,7 +36,7 @@ class AttributeTest extends TestCase
             'data set 1' => [0, 0, 0],
             'data set 2' => [2, 1, 1],
             'data set 3' => [1, 0, 1],
-            'data set 4' => [4, 1, 3]
+            'data set 4' => [4, 1, 3],
         ];
     }
 
@@ -46,7 +45,8 @@ class AttributeTest extends TestCase
      *
      * @return void
      */
-    public function add_numbers() {
+    public function add_numbers()
+    {
 
         // dd("test");
 
@@ -55,12 +55,12 @@ class AttributeTest extends TestCase
         $total = User::addNumbers($num1, $num2);
         $this->assertSame($total, 3);
 
-        $name = $this->user->getName("name1");
-        $this->assertSame("name1", $name);
+        $name = $this->user->getName('name1');
+        $this->assertSame('name1', $name);
 
         $this->expectException(Exception::class);
         $name = $this->user->getName(12);
-        $this->assertSame("name1", $name);
+        $this->assertSame('name1', $name);
     }
 
     /**
@@ -69,11 +69,11 @@ class AttributeTest extends TestCase
     public function test_get_api_json_response_response(): void
     {
 
-        $this->get(route('test-api', ["name" => "name1"]))->assertStatus(422);
+        $this->get(route('test-api', ['name' => 'name1']))->assertStatus(422);
         $json_content = $this->get('/api/test-api?name=name1')->decodeResponseJson()->json;
         $data = json_decode($json_content, true);
-        $this->assertSame("E001", $data["errorCode"]);
-        $this->assertSame("name1", $data["name"]);
+        $this->assertSame('E001', $data['errorCode']);
+        $this->assertSame('name1', $data['name']);
     }
 
     /**
@@ -81,11 +81,11 @@ class AttributeTest extends TestCase
      */
     public function test_post_api_json_response_response(): void
     {
-        $this->post(route('test-api', ["name" => "name1"]))->assertStatus(200);
-        $json_content = $this->post('/api/test-api', ["name" => "name1"])->decodeResponseJson()->json;
+        $this->post(route('test-api', ['name' => 'name1']))->assertStatus(200);
+        $json_content = $this->post('/api/test-api', ['name' => 'name1'])->decodeResponseJson()->json;
         $data = json_decode($json_content, true);
-        $this->assertSame("0000", $data["errorCode"]);
-        $this->assertSame("name1", $data["name"]);
+        $this->assertSame('0000', $data['errorCode']);
+        $this->assertSame('name1', $data['name']);
     }
 
     /**
@@ -93,11 +93,11 @@ class AttributeTest extends TestCase
      */
     public function test_put_api_json_response_response(): void
     {
-        $this->put(route('test-api', ["name" => "name1"]))->assertStatus(200);
-        $json_content = $this->put('/api/test-api', ["name" => "name1"])->decodeResponseJson()->json;
+        $this->put(route('test-api', ['name' => 'name1']))->assertStatus(200);
+        $json_content = $this->put('/api/test-api', ['name' => 'name1'])->decodeResponseJson()->json;
         $data = json_decode($json_content, true);
-        $this->assertSame("0001", $data["errorCode"]);
-        $this->assertSame("name1", $data["name"]);
+        $this->assertSame('0001', $data['errorCode']);
+        $this->assertSame('name1', $data['name']);
     }
 
     /**
@@ -105,11 +105,11 @@ class AttributeTest extends TestCase
      */
     public function test_patch_api_json_response_response(): void
     {
-        $this->patch(route('test-api', ["name" => "name1"]))->assertStatus(200);
-        $json_content = $this->patch('/api/test-api', ["name" => "name1"])->decodeResponseJson()->json;
+        $this->patch(route('test-api', ['name' => 'name1']))->assertStatus(200);
+        $json_content = $this->patch('/api/test-api', ['name' => 'name1'])->decodeResponseJson()->json;
         $data = json_decode($json_content, true);
-        $this->assertSame("0002", $data["errorCode"]);
-        $this->assertSame("name1", $data["name"]);
+        $this->assertSame('0002', $data['errorCode']);
+        $this->assertSame('name1', $data['name']);
     }
 
     /**
@@ -117,11 +117,11 @@ class AttributeTest extends TestCase
      */
     public function test_delete_api_json_response_response(): void
     {
-        $this->delete(route('test-api', ["name" => "name1"]))->assertStatus(200);
-        $json_content = $this->delete('/api/test-api', ["name" => "name1"])->decodeResponseJson()->json;
+        $this->delete(route('test-api', ['name' => 'name1']))->assertStatus(200);
+        $json_content = $this->delete('/api/test-api', ['name' => 'name1'])->decodeResponseJson()->json;
         $data = json_decode($json_content, true);
-        $this->assertSame("0003", $data["errorCode"]);
-        $this->assertSame("name1", $data["name"]);
+        $this->assertSame('0003', $data['errorCode']);
+        $this->assertSame('name1', $data['name']);
     }
 
     /** @test */
@@ -141,7 +141,7 @@ class AttributeTest extends TestCase
 
         $commandTester->execute([
             'command' => $command->getName(),
-            'type' => 'success'
+            'type' => 'success',
         ]);
 
         $this->assertStringContainsString('Command Successfull', $commandTester->getDisplay());
@@ -150,7 +150,7 @@ class AttributeTest extends TestCase
 
         $commandTester->execute([
             'command' => $command->getName(),
-            'type' => 'failed'
+            'type' => 'failed',
         ]);
 
         $this->assertStringContainsString('Command Failed', $commandTester->getDisplay());

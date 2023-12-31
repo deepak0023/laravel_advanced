@@ -3,7 +3,6 @@
 namespace App\Jobs;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
@@ -28,10 +27,11 @@ class TestJob5 implements ShouldQueue
     {
         // throw new \Exception("this is a sample exception");
 
-        logger("This is test job 5");
+        logger('This is test job 5');
     }
 
-    public function tags() {
+    public function tags()
+    {
         return ['tag_5'];
     }
 }

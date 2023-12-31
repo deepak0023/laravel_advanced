@@ -2,18 +2,18 @@
 
 namespace App\Jobs;
 
-use Illuminate\Bus\Queueable;
 use Illuminate\Bus\Batchable;
+use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\Middleware\WithoutOverlapping;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redis;
-use Illuminate\Queue\Middleware\WithoutOverlapping;
 
-class TestJob3 implements ShouldQueue, ShouldBeUnique
+class TestJob3 implements ShouldBeUnique, ShouldQueue
 {
     use Batchable, Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -52,20 +52,20 @@ class TestJob3 implements ShouldQueue, ShouldBeUnique
         //     info("running job 3");
         // });
 
-
         // Cache::lock('job3_lock')->block(10, function() {
         //     sleep(5);
         //     info("running job 3");
         // });
 
-        info("running job 3");
+        info('running job 3');
 
         sleep(20);
 
-        logger("This is test job 3");
+        logger('This is test job 3');
     }
 
-    public function tags() {
+    public function tags()
+    {
         return ['tag_3'];
     }
 
@@ -75,11 +75,13 @@ class TestJob3 implements ShouldQueue, ShouldBeUnique
     //     ];
     // }
 
-    public function uniqueId() {
+    public function uniqueId()
+    {
         return 'job3_lock';
     }
 
-    public function uniqueFor() {
+    public function uniqueFor()
+    {
         return 30;
     }
 }

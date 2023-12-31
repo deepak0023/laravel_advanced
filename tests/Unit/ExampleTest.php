@@ -44,10 +44,10 @@ class ExampleTest extends TestCase
      */
     public function test_for_same_value_and_type(): void
     {
-        $this->assertSame("12", "12");  // // compares with ===
+        $this->assertSame('12', '12');  // // compares with ===
 
-        $a = ["a"=>["abc", "efg"]];
-        $b = ["a"=>["abc", "efg"]];
+        $a = ['a' => ['abc', 'efg']];
+        $b = ['a' => ['abc', 'efg']];
 
         $this->assertSame($a, $b);
     }
@@ -57,13 +57,12 @@ class ExampleTest extends TestCase
      */
     public function test_for_same_value(): void
     {
-        $this->assertEquals("12", 12);   // compares with ==
+        $this->assertEquals('12', 12);   // compares with ==
 
-        $a = ["a"=>["abc", "efg"]];
-        $b = ["a"=>["abc", "efg"]];
+        $a = ['a' => ['abc', 'efg']];
+        $b = ['a' => ['abc', 'efg']];
 
         $this->assertEquals($a, $b);
-
 
     }
 
@@ -72,10 +71,10 @@ class ExampleTest extends TestCase
      */
     public function test_for_same_value_ignoring_case(): void
     {
-        $this->assertEqualsIgnoringCase("abc", "ABC");   // compares with ==
+        $this->assertEqualsIgnoringCase('abc', 'ABC');   // compares with ==
 
-        $a = ["a"=>["Abc", "efG"]];
-        $b = ["a"=>["abC", "efg"]];
+        $a = ['a' => ['Abc', 'efG']];
+        $b = ['a' => ['abC', 'efg']];
 
         $this->assertEqualsIgnoringCase($a, $b);
     }
@@ -109,7 +108,7 @@ class ExampleTest extends TestCase
         $b = base_path('storage/app/test_2.txt');
 
         $this->assertFileEquals($a, $b);
-        $this->assertFileMatchesFormat("Sample text", $a);
+        $this->assertFileMatchesFormat('Sample text', $a);
         $this->assertFileMatchesFormatFile($a, $b);
         $this->assertStringEqualsFile($a, "Sample text\n");
         $this->assertStringEqualsFileIgnoringCase($a, "sample text\n");
@@ -120,15 +119,15 @@ class ExampleTest extends TestCase
      */
     public function test_for_array_has(): void
     {
-        $a = ["key_1" => "abc", "key_2" => "efg"];
-        $b = ["val_1", 2, "val_3"];
+        $a = ['key_1' => 'abc', 'key_2' => 'efg'];
+        $b = ['val_1', 2, 'val_3'];
 
         $this->assertIsArray($a);
-        $this->assertArrayHasKey("key_1", $a);
-        $this->assertArrayNotHasKey("key_3", $a);
+        $this->assertArrayHasKey('key_1', $a);
+        $this->assertArrayNotHasKey('key_3', $a);
         $this->assertContains(2, $b);
-        $this->assertContains("abc", $a);
-        $this->assertNotContains("b", $a);
+        $this->assertContains('abc', $a);
+        $this->assertNotContains('b', $a);
         $this->assertIsList([0 => 'foo', 1 => 'ooo', 2 => 'bar']); // must have consecutive key values
     }
 
@@ -137,8 +136,8 @@ class ExampleTest extends TestCase
      */
     public function test_for_array_type_check(): void
     {
-        $a = ["key_1" => "abc", "key_2" => "efg"];
-        $b = ["val_1", 2, "val_3"];
+        $a = ['key_1' => 'abc', 'key_2' => 'efg'];
+        $b = ['val_1', 2, 'val_3'];
 
         $this->assertContainsOnly('string', $a);
         // $this->assertContainsOnly('string', $b);
@@ -151,8 +150,8 @@ class ExampleTest extends TestCase
      */
     public function test_for_array_count(): void
     {
-        $a = ["key_1" => "abc", "key_2" => "efg"];
-        $b = ["val_1", 2];
+        $a = ['key_1' => 'abc', 'key_2' => 'efg'];
+        $b = ['val_1', 2];
 
         $this->assertCount(2, $a);
         $this->assertSameSize($a, $b);
@@ -178,7 +177,6 @@ class ExampleTest extends TestCase
         $a = base_path('storage/app/test_3.json');
         $b = base_path('storage/app/test_4.json');
 
-
         $this->assertJson('{"a":"b"}');
         $this->assertJsonFileEqualsJsonFile($a, $b);
         $this->assertJsonStringEqualsJsonString('{"a":"b"}', '{"a":"b"}');
@@ -194,7 +192,7 @@ class ExampleTest extends TestCase
 
         $this->assertXmlFileEqualsXmlFile($a, $b);
         $this->assertXmlStringEqualsXmlString('<abc></abc>', '<abc></abc>');
-        $this->assertXmlStringEqualsXmlFile($a, "<abc></abc>");
+        $this->assertXmlStringEqualsXmlFile($a, '<abc></abc>');
     }
 
     /**
@@ -225,7 +223,7 @@ class ExampleTest extends TestCase
         $this->assertIsInt(2);
         $this->assertIsNumeric(5);
         $this->assertIsObject(new \stdClass);
-        $this->assertIsString("abc");
+        $this->assertIsString('abc');
         $this->assertNull(null);
         $this->assertNan(NAN);
     }

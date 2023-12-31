@@ -1,12 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Events\UserRegistration;
 use App\Jobs\TestJob;
-use App\Models\User;
 use App\Jobs\TestJob2;
+use App\Models\User;
 use Illuminate\Pipeline\Pipeline;
 use Illuminate\Support\Facades\Bus;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,8 +36,7 @@ Route::post('/userreg', function () {
     return view('userregistration');
 });
 
-
-Route::get('/test-queue', function() {
+Route::get('/test-queue', function () {
     // dispatch(function() {
     //     logger("test123");
     // });
@@ -61,7 +60,6 @@ Route::get('/test-queue', function() {
     // ])->then(function($string) {
     //     dump($string);
     // });
-
 
     // $batch = [
     //     [
@@ -93,7 +91,6 @@ Route::get('/test-queue', function() {
     // })
     // ->dispatch();
 
-
     // $parallel_batch = [
     //     [
     //         new App\Jobs\TestJob3(),
@@ -114,9 +111,9 @@ Route::get('/test-queue', function() {
 
     App\Jobs\TestJob3::dispatch();
 
-    dd("done");
+    dd('done');
 });
 
-Route::get('/test', function() {
+Route::get('/test', function () {
     dd(storage_path('app/test.txt'));
 });
