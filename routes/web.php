@@ -7,6 +7,9 @@ use App\Models\User;
 use Illuminate\Pipeline\Pipeline;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
+use App\Facades\FishFacade;
+use App\Facades\BikeFacade;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +22,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
+    dump(app()); // Check for list of service provider loaded
+    dump(app()->make("Hello"));
     return view('welcome');
 });
 
@@ -115,5 +122,123 @@ Route::get('/test-queue', function () {
 });
 
 Route::get('/test', function () {
+    dump(app());  // Check for list of service provider loaded
     dd(storage_path('app/test.txt'));
+});
+
+Route::get('/facade', function() {
+    // class Fish {
+    //     public function swim() {
+    //         return 'swiming';
+    //     }
+    //     public function eat() {
+    //         return 'eating';
+    //     }
+    // }
+
+    // app()->bind('Fish', function() {
+    //     return new Fish;
+    // });
+
+    // dump("Service Provider", app()->make('Fish')->swim());
+
+    // class Bike {
+    //     public function horn() {
+    //         return 'horning';
+    //     }
+    //     public function ride() {
+    //         return 'riding';
+    //     }
+    // }
+
+    // app()->bind('Bike', function() {
+    //     return new Bike;
+    // });
+
+    // class Facade {
+    //     public static function __callStatic($name, $args) {
+    //         return app()->make(static::getFacadeAccessor($name, $args))->$name();
+    //     }
+    //     public static function getFacadeAccessor($name, $args) {
+    //         //
+    //     }
+    // }
+
+    // class FishFacade extends Facade {
+    //     public static function getFacadeAccessor($name, $args) {
+    //         return 'Fish';
+    //     }
+    // }
+
+    // class BikeFacade extends Facade {
+    //     public static function getFacadeAccessor($name, $args) {
+    //         return 'Bike';
+    //     }
+    // }
+
+    dump("Facade", FishFacade::swim("val_1"));
+
+    dump("Bike", BikeFacade::ride("val_2"));
+});
+
+
+
+Route::get('/container', function() {
+    class Container {
+        protected $bindings = [];
+
+        public function bind($name, Callable $resolver) {
+            $this->binding[$name] = $resolver;
+        }
+        public function make($name) {
+            return $this->binding[$name]();
+        }
+    }
+
+    $container = new Container();
+
+    $container->bind('Game', function() {
+        return 'Football';
+    });
+
+    dump("Container", $container->make('Game'));
+
+    class Sample3 {
+        public function __construct() {
+        }
+    }
+
+    class Sample2 {
+        public function __construct(Sample3 $sample3) {
+            $this->sample3 = $sample3;
+        }
+    }
+
+
+    class Sample1 {
+        public function __construct(Sample2 $sample2) {
+            $this->sample2 = $sample2;
+        }
+    }
+
+    // app()->bind('Sample1', function() {
+    //     return new Sample1(new Sample2(new Sample3));
+    // });
+
+    // dd(app()->make('Sample1'));
+
+    // instead of the above ^^
+
+    dump(resolve('Sample1'));  // does autodiscovery of class using reflection class
+
+    // app()->bind('random', function() {
+    //     return Str::random();        // creates different random string eact time
+    // });
+
+    app()->singleton('random', function() {
+        return Str::random();        // gets the same random string eact time
+    });
+
+    dump(app()->make('random'));
+    dump(app()->make('random'));
 });
