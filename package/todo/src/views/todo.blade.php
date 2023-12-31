@@ -7,6 +7,11 @@
     <title>Todo</title>
 </head>
 <body>
-    This is the todo page
+    <h1>TODO</h1>
+    <form action="{{ route('todo') }}" method="POST">
+        <input name="name" />
+        <br>
+        <input type="submit" value="Submit"/>
+    </form>
 </body>
 </html>
