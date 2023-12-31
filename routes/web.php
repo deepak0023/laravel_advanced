@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Pipeline\Pipeline;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -226,5 +227,16 @@ Route::get('/container', function() {
 
     // instead of the above ^^
 
-    dd(resolve('Sample1'));  // does autodiscovery of class using reflection class
+    dump(resolve('Sample1'));  // does autodiscovery of class using reflection class
+
+    // app()->bind('random', function() {
+    //     return Str::random();        // creates different random string eact time
+    // });
+
+    app()->singleton('random', function() {
+        return Str::random();        // gets the same random string eact time
+    });
+
+    dump(app()->make('random'));
+    dump(app()->make('random'));
 });
