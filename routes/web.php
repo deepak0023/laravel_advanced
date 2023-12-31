@@ -122,3 +122,31 @@ Route::get('/test', function () {
     dump(app());  // Check for list of service provider loaded
     dd(storage_path('app/test.txt'));
 });
+
+Route::get('/facade', function() {
+    class Fish {
+        public function swim() {
+            return 'swiming';
+        }
+        public function eat() {
+            return 'eating';
+        }
+    }
+
+    app()->bind('Fish', function() {
+        return new Fish;
+    });
+
+
+    dump("Service Provider", app()->make('Fish')->swim());
+
+    class FishFacade {
+        public static function __callStatic($name, $args) {
+            return app()->make('Fish')->$name();
+        }
+    }
+
+    dd("Facade", FishFacade::swim());
+
+
+});
